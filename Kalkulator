@@ -1,0 +1,54 @@
+using System;
+namespace Calculator.ConsoleApp
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //1 Powitanie w aplikacji
+            Console.WriteLine("Aplikacja Prosty Kalkulator");
+            
+            //2 Informacja o podaniu pierwszej liczby
+            Console.WriteLine("Podaj pierwszą liczbę:");
+           
+            //3 Przyjęcie pierwszej liczby
+            var number1 = int.Parse(Console.ReadLine());
+ 
+            //4 Wybór działania kalkulatora
+            Console.WriteLine("Jakie działanie ma wykonać program? Wybierz: '+', '-', '*', '/'.");
+ 
+            //5 Przyjęcie wybranego działania
+            var operation = Console.ReadLine();
+ 
+            //6 Informacja o podaniu drugiej liczby
+            Console.WriteLine("Podaj drugą liczbę:");
+ 
+            //7 Przyjęcie drugiej liczby
+            var number2 = int.Parse(Console.ReadLine());
+ 
+            //8 Wykonanie działania
+            var result = 0;
+ 
+            switch (operation)
+            {
+                case "+":
+                    result = number1 + number2;
+                    break;
+                case "-":
+                    result = number1 - number2;
+                    break;
+                case "*":
+                    result = number1 * number2;
+                    break;
+                case "/":
+                    result = number1 / number2;
+                    break;
+                default:
+                    throw new Exception("Wybrałeś niepoprawne działanie");
+            }
+ 
+            //9 Wyświetlenie wyniku działania
+            Console.WriteLine($"Wynik Twojego działania to: {result}.");
+        }
+    }
+}
